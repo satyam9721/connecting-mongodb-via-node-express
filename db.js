@@ -12,6 +12,19 @@ const mongoDB= ()=>{
         console.log("connected");
     })
 }
+
+//retriving data from database
+
+
+const fetched_data =  mongoose.connection.db.collection("food_items");
+        fetched_data.find({}).toArray(function(err,data){
+            if(err) console.log(err);
+            else console.log(data);
+        })
+
+
+
+
 // mongoose.connect('mongodb://0.0.0.0:27017/go_foodmern',{
 //     userNewUrlParser: true,
 //     useUnifiedTopology:true
